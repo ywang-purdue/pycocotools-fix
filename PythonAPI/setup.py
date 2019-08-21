@@ -1,9 +1,17 @@
-from setuptools import setup, Extension
-import numpy as np
+from setuptools import dist, setup, Extension
 
 # To compile and install locally run "python setup.py build_ext --inplace"
 # To install library to Python site-packages run "python setup.py build_ext install"
 
+install_requires=[
+    'setuptools>=18.0',
+    'cython>=0.27.3',
+    'matplotlib>=2.1.0'
+]
+
+dist.Distribution().fetch_build_eggs(install_requires)
+
+import numpy as np
 ext_modules = [
     Extension(
         'pycocotools._mask',
@@ -21,6 +29,10 @@ setup(
         'setuptools>=18.0',
         'cython>=0.27.3',
         'matplotlib>=2.1.0'
+    ],
+    setup_requires=[
+        'cython>=0.27.3',
+        'numpy'
     ],
     version='2.0',
     ext_modules= ext_modules
