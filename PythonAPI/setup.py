@@ -22,7 +22,9 @@ ext_modules = [
 ]
 
 setup(
-    name='pycocotools',
+    name='pycocotools-fix',
+    description='Fixed pycocotools package installation error of numpy or cython not installed',
+    long_description='Created due to the inactivity of the original repo: https://github.com/cocodataset/cocoapi',
     packages=['pycocotools'],
     package_dir = {'pycocotools': 'pycocotools'},
     install_requires=[
