@@ -1,4 +1,4 @@
-# pycoco-fix
+# pycocotools-fix
 
 The original [cocoapi](https://github.com/cocodataset/cocoapi) package installaion fails if cython or numpy is not installed. This constraints makes automated dependency management difficult, as pip needs to be called twice, first to install cython and numpy, and then second time to install pycoco. This repository fixed the dependency constraint so that pycoco can be installed with a single run of pip.
 
